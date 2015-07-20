@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TagsTableSeeder extends Seeder
+class TagTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,30 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('tags')->delete();
+        DB::statement('ALTER TABLE tags AUTO_INCREMENT=1');
+        DB::table('tags')->insert([
+            [
+                'name' => 'Design pattern',
+            ],
+            [
+                'name' => 'Cache',
+            ],
+            [
+                'name' => 'Security',
+            ],
+            [
+                'name' => 'Facade',
+            ],
+            [
+                'name' => 'Behat',
+            ],
+            [
+                'name' => 'Fabric',
+            ],
+            [
+                'name' => 'Bash',
+            ],
+        ]);
     }
 }
