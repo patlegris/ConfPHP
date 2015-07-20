@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ROOT_NAME=root
-ROOT_PASSWORD=''
+ROOT_PASSWORD=
 
 USER_NAME=pat
 USER_PASSWORD=ramses
