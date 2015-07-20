@@ -16,15 +16,15 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('title', 50);
-            $table->string('excerpt', 500);
+            $table->string('excerpt', 255);
             $table->text('content');
             $table->dateTime('date_start');
             $table->dateTime('date_end');
+            $table->string('slug');
+            $table->string('thumbnail_link');
+            $table->string('url_site');
+            $table->enum('status', ['publish', 'un-publish']);
             $table->timestamps();
-            $table->string('slug', 100);
-            $table->string('thumbnail_link', 200);
-            $table->string('url_site', 200);
-            $table->enum('status', ['publish', 'unpublish']);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
         });
