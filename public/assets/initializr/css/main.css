@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}
+
+.hero {
+    margin: 0;
+    background-color: lightseagreen;
+}
+
+.container {
+    padding: 0;
+}
+
+.container .jumbotron {
+    border-radius: 0;
+}
+
+.form-control {
+    width: 70%;
+}
+
+.nav-pills {
+    float: right;
+}
+
+.nav .nav-pills li a:hover,
+.nav .nav-pills li a:active {
+    color: #ff6666;
+    background-color: #e4b9c0;
+}
+
+aside {
+    background-color: lightskyblue;
+    opacity: 70;
+    display: inline-block;
+    height: 60vh;
+    color: lightseagreen;
+}
+
+aside p {
+    padding-left: 1em;
+    color: #4682b4;
+
+}
+
+.wrapper {
+    background-color: #4682b4;
+    display: inline-block;
+    height: 60vh;
+    padding-left: 4.5em;
+    color: lightseagreen;
+
+}
+
+.wrapper a {
+    color: lightseagreen;
+}
+
+footer {
+    text-align: center;
+    background-color: lightseagreen;
+    height: 20vh;
+    padding-top: 1em;
+    color: #337ab7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
