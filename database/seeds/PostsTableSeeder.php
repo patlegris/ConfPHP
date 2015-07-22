@@ -22,7 +22,7 @@ class PostsTableSeeder extends Seeder
                 'content' => 'The two day conference will take place on Thursday 25th - Friday 26th September 2014, in the heart of Madrid, and will bring together the sharpest minds in open source enterprise software development. Day one is a workshop day consisting of hands-on training courses from industry leading Symfony experts. Day two is the main conference day when we\'re pulling out all the stops. Talks on Symfony, Drupal, BDD and wider PHP topics will make this an event to remember. ',
                 'date_start' => '29-10-2014 09:00:00',
                 'date_end' => '31-10-2014 18:00:00',
-                'thumbnail_link' => 'symfony_madrid.png',
+                'thumbmail_link' => 'symfony_madrid.png',
                 'url_site' => 'http://berlin2014.live.symfony.com/',
                 'status' => 'publish',
             ],
