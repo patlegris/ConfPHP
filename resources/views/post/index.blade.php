@@ -35,7 +35,6 @@
         @else
             <p>Désolé pas d'article </p>
         @endif
-
     </div>
 
 
