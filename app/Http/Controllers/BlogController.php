@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Post::all()->where('status', 'publish');
-        return view('blog.index', compact('posts'));
+        return view('front.main', compact('posts'));
     }
 
     /**
@@ -26,8 +26,8 @@ class BlogController extends Controller
      */
     public function showPost($id, $slug)
     {
-        $post = Post::find($id)->first();
-        return view('blog.single', compact('post'));
+//        $post = Post::find($id)->first();
+//        return view('main.single', compact('post'));
     }
 
 }

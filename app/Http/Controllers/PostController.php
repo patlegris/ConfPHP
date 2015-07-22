@@ -16,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all()->where('status', 'publish');
+        return view('blog.index', compact('posts'));
     }
 
     /**

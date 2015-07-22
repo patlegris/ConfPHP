@@ -33,7 +33,7 @@
                 @endforeach
             </ul>
         @else
-            <p>Désolé pas d'article </p>
+            <p>DÃ©solÃ© pas d'article </p>
         @endif
 
     </div>
