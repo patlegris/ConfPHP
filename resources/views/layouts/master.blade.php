@@ -27,11 +27,10 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-@include('includes.header')
+@include('front.includes.header')
 <div id="main" role="main">
     <section id="post">
-
-    <h1>Conférences intéressantes autour du PHP</h1>
+        <h1>Conférences intéressantes autour du PHP</h1>
         <article class="news">
             <h2><a href="#" class="link-post">Symfony Live Madrid 2014</a></h2>
             <img class="left" src="assets/images/confs/symfony_madrid.png">
@@ -56,14 +55,9 @@
             </footer>
         </article>
     </section>
-    @include('includes.sidebar')
+    @include('front.includes.sidebar')
 </div>
-<footer id="footer">
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Mentions légales</a>
-        <a href="#">Contact</a>
-    </nav>
-</footer>
+
+@include('front.includes.footer')
 </body>
 </html>

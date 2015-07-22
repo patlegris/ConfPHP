@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: patrick
- * Date: 22/07/2015
- * Time: 12:28
- */
+<footer id="footer">
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Contact</a>
+    </nav>
+</footer>

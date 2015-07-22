@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = Post::published()->get();
+        $posts = Post::all()->get()->where('status', 'publish');
         return view('blog.index', compact('posts'));
     }
 
@@ -21,9 +21,4 @@ class BlogController extends Controller
         return view('blog.single', compact('post'));
     }
 
-    public function showTag($id)
-    {
-        $posts = Tag::find($id)->posts;
-        return view('blog.tag', compact('posts'));
-    }
 }
