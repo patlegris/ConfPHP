@@ -15,9 +15,9 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email', 100);
-            $table->text('content');
+            $table->text('message');
             $table->enum('status', ['publish', 'un-publish']);
-            $table->enum('spam', ['spam', 'no-spam']);
+            $table->enum('spam', ['spam', 'no-spam', 'spam']);
             $table->timestamps();
 
             $table->integer('post_id')->unsigned()->nullable();
