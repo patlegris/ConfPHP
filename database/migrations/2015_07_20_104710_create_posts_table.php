@@ -26,10 +26,10 @@ class CreatePostsTable extends Migration
             $table->timestamps();
 
             $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->integer('tag_id')->unsigned()->nullable();
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('SET NULL');
+            $table->foreign('tag_id')->references('id')->on('tags');
 
         });
     }
