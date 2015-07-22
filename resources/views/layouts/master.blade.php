@@ -32,6 +32,7 @@
     <section id="post">
         <h1>Conférences intéressantes autour du PHP</h1>
         <article class="news">
+            @section('title')
             <h2><a href="#" class="link-post">Symfony Live Madrid 2014</a></h2>
             <img class="left" src="assets/images/confs/symfony_madrid.png">
 

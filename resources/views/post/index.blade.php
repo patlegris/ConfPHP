@@ -1,9 +1,8 @@
 @extends('layouts.master')
 
 @section('title')
-    {{$title or 'Welcome BLog' }}
+    <h2><a href="#" class="link-post">{{$title or 'Welcome BLog' }}</a></h2>
 @endsection
-
 
 @section('sidebar')
     @parent
