@@ -25,7 +25,6 @@ class PostsTableSeeder extends Seeder
                 'thumbnail_link' => 'symfony_madrid.png',
                 'url_site' => 'http://berlin2014.live.symfony.com/',
                 'status' => 'publish',
-                'tag_id' => 5,
             ],
             [
                 'user_id' => 1,
@@ -38,7 +37,6 @@ class PostsTableSeeder extends Seeder
                 'thumbnail_link' => 'symfony_london.png',
                 'url_site' => 'http://london2014.live.symfony.com/',
                 'status' => 'publish',
-                'tag_id' => 4,
             ],
             [
                 'user_id' => 1,
@@ -51,7 +49,6 @@ class PostsTableSeeder extends Seeder
                 'thumbnail_link' => 'laravel_amsterdam2014.jpg',
                 'url_site' => 'http://laracon.eu/2014/',
                 'status' => 'publish',
-                'tag_id' => 2,
             ],
             [
                 'user_id' => 1,
@@ -64,7 +61,6 @@ class PostsTableSeeder extends Seeder
                 'thumbnail_link' => 'rasmusLerdorf.jpg',
                 'url_site' => 'http://afup.org/pages/phptourlyon2014/',
                 'status' => 'publish',
-                'tag_id' => 2,
             ],
         ]);
     }
