@@ -22,18 +22,7 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header id="banner" role="banner">
-    <div id="avatar"></div>
-    <h1 id="afup"><a class="link-home" href="#">ConfPHP</a>
-    </h1>
-
-    <p id="conf">Prochaines conférences 2015</p>
-    <nav role="navigation" id="navigation">
-        <a href="#">Accueil</a>
-        <a href="#">à propos</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+@include('partials.menu')
 <div id="main" role="main">
     <section id="post">
         <h1>Conférences intéressantes autour du PHP</h1>
