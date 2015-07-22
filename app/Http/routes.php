@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* --------------------------------------------------------- *\
+   Route BLOG
+\* --------------------------------------------------------- */
+Route::get('/', 'BlogController@index');
+Route::get('single/{id}/{slug?}', 'BlogController@showPost');
+Route::get('tag/{id}', 'BlogController@showTag');
