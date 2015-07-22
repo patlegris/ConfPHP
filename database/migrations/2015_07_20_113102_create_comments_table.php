@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->enum('status', ['publish', 'un-publish', 'spam']);
             $table->timestamps();
 
+
             $table->integer('post_id')->unsigned()->nullable();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('CASCADE');
 
