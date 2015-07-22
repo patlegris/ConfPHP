@@ -1,7 +1,7 @@
 <!doctype html>
 @include('front.includes.head')
 <body>
-@include('front.partials.browser')
+@include('front.includes.browser')
 @include('front.includes.header')
 <div id="main" role="main">
     <section id="post">
@@ -34,28 +34,26 @@
                 <ul class="list-group">
                     @foreach($posts  as  $post)
                         {{--@if($title = $post->title)--}}
-                            <h2><a href="#" class="link-post">{{$post->title}}</a></h2>
+                        <h2><a href="{{url('single',
+                            [$post->id,$post->slug])}}" class="link-post">{{$post->title}}</a></h2>
                         {{--@endif--}}
-                        <img class="left" src="assets/images/confs/{{$post->thumbnail_link}}">
+                        <img class="left" href="{{url('single',
+                            [$post->id,$post->slug])}}" src="assets/images/confs/{{$post->thumbnail_link}}">
                         <p>{{$post->excerpt}}</p>
                         <br>
-                        <a class="link" href="#">lire la suite...</a>
+                        <a class="link" href="{{url('single',
+                            [$post->id,$post->slug])}}">lire la suite...</a>
                         <br>
-                        @if($thumb = $post->link_thumbnail)
-                            <div class="thumbnail"><img src="{{url('upload',[$thumb])}}" alt=""/></div>
-                        @endif
 
-                        <li class="list-group-item"><a href="{{url('single',[$post->id,$post->slug])}}"><h3>
-                                    <br>{{$post->title}}</h3></a>
-                            @if($post->user)
-                                <h4>Author :<a href="{{url('user/'.$post->user->id)}}">  {{ $post->user->name}}</a></h4>
-                            @else
-                                <h4>Author : Pas d'auteur</h4>
-                            @endif
-                            <strong>Tags :</strong>@foreach( $post->tags as $tag)
-                                <a href="{{url('tag/'.$tag['id'])}}"> {{$tag->name}} /</a>
-                            @endforeach
-                        </li>
+                        @if($post->user)
+                            <h4>Author :<a href="{{url('user/'.$post->user->id)}}">{{$post->user->name}}</a></h4>
+                        @else
+                            <h4>Author : Pas d'auteur</h4>
+                        @endif
+                        <strong>Tags :</strong>@foreach( $post->tags as $tag)
+                            <a href="{{url('tag/'.$tag['id'])}}"> {{$tag->name}} /</a>
+                        @endforeach
+
                     @endforeach
                 </ul>
             @else
