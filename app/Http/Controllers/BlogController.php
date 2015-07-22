@@ -15,12 +15,6 @@ class BlogController extends Controller
         return view('blog.index', compact('posts'));
     }
 
-    public function showPostByCategory($id)
-    {
-        $posts = Category::find($id)->posts()->published()->get();
-        return view('blog.category', compact('posts'));
-    }
-
     public function showPost($id, $slug = '')
     {
         $post = Post::published($id)->first();

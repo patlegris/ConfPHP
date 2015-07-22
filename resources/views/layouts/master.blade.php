@@ -13,7 +13,7 @@
     <title>
     </title>
     <meta content="conférence PHP" name="description">
-    <meta content="Antoine AFUP" name="author">
+    <meta content="Antoine AFUP" name="Patrick LECOINTRE">
     <meta content="Paris, France" name="geo.placename">
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -22,10 +22,16 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
 @include('partials.menu')
 <div id="main" role="main">
     <section id="post">
-        <h1>Conférences intéressantes autour du PHP</h1>
+
+    <h1>Conférences intéressantes autour du PHP</h1>
         <article class="news">
             <h2><a href="#" class="link-post">Symfony Live Madrid 2014</a></h2>
             <img class="left" src="assets/images/confs/symfony_madrid.png">
