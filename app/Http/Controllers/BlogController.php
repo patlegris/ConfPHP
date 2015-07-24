@@ -15,7 +15,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Post::all()->where('status', 'publish');
+        $posts = Post::all()
+            ->sortByDesc('date_start')
+            ->where('status', 'publish');
         return view('front.main', compact('posts'));
     }
 
@@ -24,10 +26,19 @@ class BlogController extends Controller
      * @param $slug
      * @return \Illuminate\View\View
      */
-    public function showPost($id, $slug)
-    {
+//    public function showPost($id, $slug)
+//    {
 //        $post = Post::find($id)->first();
 //        return view('main.single', compact('post'));
+//    }
+
+    public function about()
+    {
+        return view('front.about');
     }
 
+    public function contact()
+    {
+        return view('front.contact');
+    }
 }
