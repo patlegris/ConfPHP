@@ -22,12 +22,15 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->string('thumbnail_link');
             $table->string('url_site');
-            $table->enum('status', ['publish', 'un-publish']);
+            $table->enum('status', ['publish', 'un-publish'])->default('publish');
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
 
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('SET NULL');
         });
     }
 

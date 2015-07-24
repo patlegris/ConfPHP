@@ -20,6 +20,7 @@ class CommentsTableSeeder extends Seeder
 mentitum anim deserunt, fabulas fugiat laboris appellat. Te se tamen voluptate,
 varias mandaremus ut noster labore.',
                 'post_id' => 1,
+
             ],
             [
                 'email' => 'Alain@gmail.com',

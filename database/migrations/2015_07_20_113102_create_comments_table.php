@@ -16,11 +16,11 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('email', 100);
             $table->text('message');
-            $table->enum('status', ['publish', 'un-publish', 'spam']);
+            $table->enum('status', ['publish', 'un-publish', 'spam'])->default('un-publish');
             $table->timestamps();
 
 
-            $table->integer('post_id')->unsigned()->nullable();
+//            $table->integer('post_id')->unsigned()->nullable();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('CASCADE');
 
         });
