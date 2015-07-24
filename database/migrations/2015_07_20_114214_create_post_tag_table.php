@@ -18,7 +18,6 @@ class CreatePostTagTable extends Migration
 
             $table->foreign('tag_id')->references('id')->on('tags');
             $table->foreign('post_id')->references('id')->on('posts');
-            $table->unique(['tag_id', 'post_id']);
         });
     }
 
@@ -29,11 +28,6 @@ class CreatePostTagTable extends Migration
      */
     public function down()
     {
-        Schema::table('post_tag', function (Blueprint $table) {
-            $table->dropForeign('post_tag_tag_id_foreign');
-            $table->dropForeign('post_tag_post_id_foreign');
-        });
-
         Schema::drop('post_tag');
     }
 }

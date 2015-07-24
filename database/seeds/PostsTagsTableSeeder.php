@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PostsTagsSeeder extends Seeder
+class PostsTagsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,9 +11,9 @@ class PostsTagsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Post_Tag')->delete();
-        DB::statement('ALTER TABLE PostsTags AUTO_INCREMENT=1');
-        DB::table('Post_Tag')->insert([
+        DB::table('post_tag')->delete();
+        DB::statement('ALTER TABLE post_tag AUTO_INCREMENT=1');
+        DB::table('post_tag')->insert([
             [
                 'post_id' => 1,
                 'tag_id' => 1,
@@ -44,7 +44,7 @@ class PostsTagsSeeder extends Seeder
             ],
             [
                 'post_id' => 4,
-                'tag_id' => 8,
+                'tag_id' => 7,
             ],
         ]);
     }

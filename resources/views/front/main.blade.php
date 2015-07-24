@@ -34,7 +34,8 @@
                 <ul class="list-group">
                     @foreach($posts  as  $post)
                         {{--@if($title = $post->title)--}}
-                        <h2><a href="{{url('single',[$post->id,$post->slug])}}" class="link-post">{{$post->title}}</a>
+                        <h2 class="title-conf"><a href="{{url('single',[$post->id,$post->slug])}}"
+                                                  class="link-post">{{$post->title}}</a>
                         </h2>
                         {{--@endif--}}
                         <img class="left" src="assets/images/confs/{{$post->thumbnail_link}}">
@@ -43,9 +44,8 @@
                         <a class="link" href="{{url('single',[$post->id,$post->slug])}}">lire la suite...</a>
                         <br>
                         <strong>Tags :</strong>
-                        {{dd($post->tags)}}
                         @foreach( $post->tags as $tag)
-                            <a href="{{url('tag/'.$tag['id'])}}"> - {{$tag->name}}/</a>
+                            <a href="{{url('tag/'.$tag['id'])}}">{{$tag->name}}/</a>
                         @endforeach
 
                     @endforeach
