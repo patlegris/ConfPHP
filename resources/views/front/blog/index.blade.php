@@ -1,8 +1,7 @@
-@section('blog.index')
+@section('front.blog.index')
     <div id="main" role="main">
         <section id="post">
             <h1>Conférences intéressantes autour du PHP</h1>
-
             <div class="post">
                 @if($posts)
                     <ul class="list-group">

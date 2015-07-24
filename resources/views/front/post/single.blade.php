@@ -1,4 +1,5 @@
-@extend('front.main')
+@extends('layout.main')
+
 <div id="main" role="main">
     <section id="post">
         <h1>Conférences intéressantes autour du PHP</h1>
