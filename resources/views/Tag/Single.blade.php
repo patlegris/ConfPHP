@@ -18,4 +18,12 @@
             </section>
         @endforeach
     </section>
-@endsection
+    @endsection
+    </div>
+    </section>
+    @include('front.includes.sidebar')
+    </div>
+
+    @include('front.includes.footer')
+</body>
+</html>
