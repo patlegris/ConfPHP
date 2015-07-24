@@ -26,7 +26,8 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
 
         });
     }
@@ -38,10 +39,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropForeign('posts_user_id_foreign');
-        });
-
         Schema::drop('posts');
     }
 }
