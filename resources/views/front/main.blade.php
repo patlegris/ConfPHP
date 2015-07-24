@@ -42,15 +42,10 @@
                         <br>
                         <a class="link" href="{{url('single',[$post->id,$post->slug])}}">lire la suite...</a>
                         <br>
-
-                        @if($post->user)
-                            <h4>Auteur :<a href="{{url('user',$post->user->id)}}">{{$post->user->name}}</a></h4>
-                        @else
-                            <h4>Auteur : Anonyme</h4>
-                        @endif
                         <strong>Tags :</strong>
+                        {{dd($post->tags)}}
                         @foreach( $post->tags as $tag)
-                            <a href="{{url('tag/'.$tag['id'])}}">{{$tag->name}}/</a>
+                            <a href="{{url('tag/'.$tag['id'])}}"> - {{$tag->name}}/</a>
                         @endforeach
 
                     @endforeach

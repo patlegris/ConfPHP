@@ -15,36 +15,36 @@ class PostsTagsSeeder extends Seeder
         DB::statement('ALTER TABLE PostsTags AUTO_INCREMENT=1');
         DB::table('Post_Tag')->insert([
             [
-                'Post_id' => 1,
-                'Tag_id' => 1,
+                'post_id' => 1,
+                'tag_id' => 1,
             ],
             [
-                'Post_id' => 1,
-                'Tag_id' => 2,
+                'post_id' => 1,
+                'tag_id' => 2,
             ],
             [
-                'Post_id' => 2,
-                'Tag_id' => 3,
+                'post_id' => 2,
+                'tag_id' => 3,
             ],
             [
-                'Post_id' => 2,
-                'Tag_id' => 4,
+                'post_id' => 2,
+                'tag_id' => 4,
             ],
             [
-                'Post_id' => 3,
-                'Tag_id' => 5,
+                'post_id' => 3,
+                'tag_id' => 5,
             ],
             [
-                'Post_id' => 3,
-                'Tag_id' => 6,
+                'post_id' => 3,
+                'tag_id' => 6,
             ],
             [
-                'Post_id' => 4,
-                'Tag_id' => 7,
+                'post_id' => 4,
+                'tag_id' => 7,
             ],
             [
-                'Post_id' => 4,
-                'Tag_id' => 8,
+                'post_id' => 4,
+                'tag_id' => 8,
             ],
         ]);
     }
