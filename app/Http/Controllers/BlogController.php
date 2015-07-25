@@ -12,11 +12,11 @@ use App\Http\Controllers\Controller;
 class BlogController extends Controller
 {
     /**
-     * @return \Illuminate\View\View
+     * @return list of the posts, this is the main page
      */
     public function index()
     {
-        $posts = Post::all()
+        $posts = Blog::all()
             ->sortByDesc('date_start')
             ->where('status', 'publish');
         return view('front.blog.index', compact('posts'));
@@ -25,26 +25,27 @@ class BlogController extends Controller
     /**
      * @param $id
      * @param $slug
-     * @return \Illuminate\View\View
+     * @return the view of the active post
      */
     public function showPost($id, $slug)
     {
-        $posts = Post::find($id)->first();
-        return view('front.post.single', compact('posts'));
+        if (!$post = Post::where('slug', $id)->first())
+            $post = Post::find((int)$id);
+        return view('front.blog.single', compact('post'));
     }
 
-    public function showTag($id)
-    {
-        $tag = Tag::find($id);
-        return view("front.tag.single", compact('tag'));
-    }
-
-    public function about()
+    /**
+     * @return accesss to the page "about"
+     */
+    public function getAbout()
     {
         return view('front.about.about');
     }
 
-    public function contact()
+    /**
+     * @return accesss to the page "contact"
+     */
+    public function getContact()
     {
         return view('front.contact.contact');
     }
