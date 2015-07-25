@@ -8,7 +8,7 @@
                 <ul class="list-group">
                     <h2 class="title-conf"><a href="{{url('single',[$post->id,$post->slug])}}"
                                               class="link-post">{{$post->title}}</a></h2>
-                    <img class="left" src="assets/images/confs/{{$post->thumbnail_link}}">
+                    <img class="left" src="assets/upload/{{$post->thumbnail_link}}">
 
                     <p>{{$post->excerpt}}</p>
                     <br>

@@ -20,12 +20,6 @@ class PostController extends Controller
         //
     }
 
-    public function ShowPost($id, $slug)
-    {
-        $posts = Post::find($id)first();
-        return view('front.post.single', compacts('posts'));
-
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -55,7 +49,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        if (!$post = Post::where('slug', $id)->first())
+            $post = Post::find((int)$id);
+        return view('front.post.single', compact('post'));
     }
 
     /**

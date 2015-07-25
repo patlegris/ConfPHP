@@ -7,12 +7,12 @@
                 @if($posts)
                     <ul class="list-group">
                         @foreach($posts  as  $post)
-                            <h2 class="title-conf"><a href="{{url('single',[$post->id,$post->slug])}}"
+                            <h2 class="title-conf"><a href="{{url([$post->id,$post->slug])}}"
                                                       class="link-post">{{$post->title}}</a></h2>
-                            <img class="left" src="assets/images/confs/{{$post->thumbnail_link}}">
+                            <img class="left" src="assets/upload/{{$post->thumbnail_link}}">
                             <p>{{$post->excerpt}}</p>
                             <br>
-                            <a class="link" href="{{url('single',[$post->id,$post->slug])}}">lire la suite...</a>
+                            <a class="link" href="{{url([$post->id,$post->slug])}}">lire la suite...</a>
                             <br><br>
                             <strong>Tags :</strong>
                             @foreach( $post->tags as $tag)
