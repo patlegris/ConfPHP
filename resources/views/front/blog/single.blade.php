@@ -2,7 +2,8 @@
 @section('body')
     <div id="main" role="main">
         <section id="post">
-            <h1>ConfÃ©rences intÃ©ressantes autour du PHP</h1>
+            <h1>Conférences intéressantes autour du PHP</h1>
+
             <div class="post">
                 @if($posts)
                     <ul class="list-group">
@@ -18,11 +19,11 @@
                             @foreach( $post->tags as $tag)
                                 <a href="{{url('tag/'.$tag['id'])}}">{{$tag->name}}/</a>
                             @endforeach
-                            <br><br><h3 class="date">dÃ©but: {{$post->date_start}} - fin: {{$post->date_end}}</h3>
+                            <br><br><h3 class="date">début: {{$post->date_start}} - fin: {{$post->date_end}}</h3>
                         @endforeach
                     </ul>
                 @else
-                    <p>DÃ©solÃ© pas de confÃ©rences prÃ©vues pour le moment, repassez nous voir prochainement</p>
+                    <p>Désolé pas de conférences prévues pour le moment, repassez nous voir prochainement</p>
                 @endif
             </div>
         </section>
