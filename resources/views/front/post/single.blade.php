@@ -1,26 +1,28 @@
-@extends('layout.main')
+@extends('main')
+@section('body')
+    <div id="main" role="main">
+        <section id="post">
+            <h1>Conférence intéressantes autour du PHP</h1>
 
-<div id="main" role="main">
-    <section id="post">
-        <h1>Conférences intéressantes autour du PHP</h1>
+            <div class="post">
+                <ul class="list-group">
+                    <h2 class="title-conf"><a href="{{url('single',[$post->id,$post->slug])}}"
+                                              class="link-post">{{$post->title}}</a></h2>
+                    <img class="left" src="assets/images/confs/{{$post->thumbnail_link}}">
 
-        <div class="post">
-            <h2 class="title-conf">{{$posts->title}}</h2>
-            <img class="left" src="assets/images/confs/{{$posts->thumbnail_link}}">
+                    <p>{{$post->excerpt}}</p>
+                    <br>
+                    <a class="link" href="{{url('single',[$post->id,$post->slug])}}">lire la suite...</a>
+                    <br><br>
+                    <strong>Tags :</strong>
+                    @foreach( $post->tags as $tag)
+                        <a href="{{url('tag/'.$tag['id'])}}">{{$tag->name}}/</a>
+                    @endforeach
+                    <br><br>
 
-            <p>{{$posts->excerpt}}</p>
-            <br>
-            <a class="link" href="{{url('front/single',[$posts->id,$posts->slug])}}">lire la suite...</a>
-            <br><br>
-            <strong>Tags :</strong>
-            @foreach( $posts->tags as $tag)
-                <a href="{{url('front/tag/'.$tag['id'])}}">{{$tag->name}}/</a>
-            @endforeach
-            <br><br>
-
-            <h3 class="date">début: {{$posts->date_start}} - fin: {{$posts->date_end}}</h3>
-        </div>
-    </section>
-</div>
-</body>
-</html>
+                    <h3 class="date">début: {{$post->date_start}} - fin: {{$post->date_end}}</h3>
+                </ul>
+            </div>
+        </section>
+    </div>
+@endsection

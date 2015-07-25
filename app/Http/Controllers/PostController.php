@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,6 +20,12 @@ class PostController extends Controller
         //
     }
 
+    public function ShowPost($id, $slug)
+    {
+        $posts = Post::find($id)first();
+        return view('front.post.single', compacts('posts'));
+
+    }
     /**
      * Show the form for creating a new resource.
      *
