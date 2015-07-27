@@ -26,6 +26,7 @@
             <h3 class="comment">Commentaires</h3>
             @if(count($post->comment)>0)
                 <ul>
+                    Comment trouvés...
                     @foreach($post->comments as $comment)
                         <li>{{$comment->email}}</li>
                         {{$comment->message}}<br/><br/>
