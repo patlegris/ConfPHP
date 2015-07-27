@@ -16,7 +16,7 @@
                             <br><br>
                             <strong>Tags :</strong>
                             @foreach( $post->tags as $tag)
-                                <a href="{{url('tag/'.$tag['id'])}}">{{$tag->name}}/</a>
+                                <a href="{{url('tag/'.$tag->id])}}">{{$tag->name}}/</a>
                             @endforeach
                             <br><br><h3 class="date">début: {{$post->date_start}} - fin: {{$post->date_end}}</h3>
                         @endforeach
