@@ -5,7 +5,7 @@
 
     <p id="conf">Prochaines conférences 2015</p>
     <nav role="navigation" id="navigation">
-        <a href="#">Accueil</a>
+        <a href="/">Accueil</a>
         <a href="#">à propos</a>
         <a href="#">Contact</a>
     </nav>
