@@ -36,7 +36,7 @@ class CommentController extends Controller
     public function store(CommentRequest $request)
     {
         Comment::create($request->all());
-        return back()->with('message', 'Commentaire ajouté');
+        return back()->with('message', 'Commentaire ajoutÃ©');
     }
 
     /**
