@@ -16,7 +16,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Blog::all()
+        $posts = Post::all()
             ->sortByDesc('date_start')
             ->where('status', 'publish');
         return view('front.blog.index', compact('posts'));

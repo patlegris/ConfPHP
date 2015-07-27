@@ -15,7 +15,7 @@
    Route BLOG
 \* --------------------------------------------------------- */
 Route::get('/', 'BlogController@index');
-Route::get('single/{id}/{slug?}', 'BlogController@showPost');
+Route::get('conference/{id}/{slug?}', 'BlogController@showPost');
 Route::get('tag/{id}', 'BlogController@showTag');
 Route::get('about', 'BlogController@about');
 Route::get('contact', 'BlogController@contact');
