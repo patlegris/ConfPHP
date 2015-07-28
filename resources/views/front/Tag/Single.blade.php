@@ -1,10 +1,10 @@
 <!doctype html>
-@include('front.includes.head')
+@include('includes.head')
 <body>
-@include('front.includes.browser')
-@include('front.includes.header')
+@include('includes.browser')
+@include('includes.header')
 @section('title')
-    Mots clés
+    Mots clï¿½s
 @endsection
 
 @section('content')
@@ -19,11 +19,9 @@
         @endforeach
     </section>
     @endsection
-    </div>
-    </section>
-    @include('front.includes.sidebar')
-    </div>
 
-    @include('front.includes.footer')
+@include('includes.sidebar')
+
+@include('includes.footer')
 </body>
 </html>

@@ -1,18 +1,18 @@
 <!doctype html>
 {{--Compatibility script IE, Meta & Scripts of the page--}}
-@include('front.includes.head')
+@include('includes.head')
 
 <body>
 {{--Header of the page--}}
-@include('front.includes.header')
+@include('includes.header')
 
 {{--Content body--}}
 @yield('body')
 
 {{--Sidebar of the page--}}
-@include('front.includes.sidebar')
+@include('includes.sidebar')
 
 {{--Footer of the page--}}
-@include('front.includes.footer')
+@include('includes.footer')
 </body>
 </html>
