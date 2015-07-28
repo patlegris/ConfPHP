@@ -2,7 +2,7 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
         <li>
-            <a href="dashboard.dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+            <a href="dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
         </li>
         <li class="active">
             <a href="post"><i class="fa fa-fw fa-table"></i> Posts</a>
