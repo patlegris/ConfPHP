@@ -14,8 +14,8 @@
                         <th>Date de fin</th>
                         <th>Changt. de statut</th>
                         <th>Supprimer</th>
-                        <tbody>
                     </tr>
+                    <tbody>
                     @foreach($posts as $post)
                         <tr>
                             <td>{{$post->id}}
@@ -29,8 +29,8 @@
                             <td>{{$post->date_end}}
                             <td/>
                         </tr>
-                        @endforeach
-                        </tbody>
+                    @endforeach
+                    </tbody>
                 </table>
             </div>
         </section>
