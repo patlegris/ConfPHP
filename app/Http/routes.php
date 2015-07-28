@@ -30,7 +30,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 /*
  * Dashboard routes
  */
-//Route::get('dashboard', 'DashboardController@indexPost');
+Route::get('dashboard', 'PostController@indexPost');
 
 /*
  * Resource routes
