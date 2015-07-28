@@ -11,9 +11,9 @@
 
                 <p>{{$post->content}}</p>
                 <br><br><br>
-                <strong>Tags :</strong>
+                <strong>Mots clefs :</strong>
                 @foreach( $post->tags as $tag)
-                    <a href="{{url('tag/'.$tag->id)}}">{{$tag->name}}/</a>
+                    <a href="{{url('tag/'.$tag->id)}}">{{$tag->name}},</a>
                 @endforeach
                 <br><br>
 
@@ -36,6 +36,6 @@
             @endif
         </section>
             {{--<section id="">--}}
-        </section>
+        {{--</section>--}}
     </div>
 @endsection
