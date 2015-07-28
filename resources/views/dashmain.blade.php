@@ -3,7 +3,6 @@
 @include('includes.head')
 
 {{--Partie Bootstrap DS--}}
-        <!-- Bootstrap Core CSS -->
 <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
 {{--<!-- Custom CSS -->--}}
 <link href="{{asset('assets/css/sb-admin.css')}}" rel="stylesheet">
@@ -18,6 +17,9 @@
 
 {{--Content body--}}
 @yield('body')
+
+{{--Sidebar of the page--}}
+@include('includes.dashsidebar')
 
 {{--Footer of the page--}}
 @include('includes.footer')
