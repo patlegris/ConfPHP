@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <script src="{{asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 
+    {{--Scripts source for bootstrap dashboard--}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
