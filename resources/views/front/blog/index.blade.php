@@ -19,7 +19,7 @@
                                 <a href="{{url('tag/'.$tag->id)}}">{{$tag->name}}/</a>
                             @endforeach
                             <br><br>
-                            <p>Nombre de commentaires:
+                            <p>Nombre de commentaires sur ce sujet :
                                 <a href="{{url('conference', [$post->id, $post->slug])}}#comment ">{{$post->nbComment()}}</a>
                             </p>
                             <h3 class="date">début: {{$post->date_start}} - fin: {{$post->date_end}}</h3>

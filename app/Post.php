@@ -49,4 +49,10 @@ class Post extends Model
         $nbComment = Comment::published($this->id)->get()->count();
         return $nbComment;
     }
+
+    public function getComment()
+    {
+        $listComment = Comment::published($this->id)->get();
+        return $listComment;
+    }
 }
