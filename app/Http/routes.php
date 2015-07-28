@@ -30,12 +30,13 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 /*
  * Dashboard routes
  */
-Route::get('dashboard', 'PostController@indexPost');
+//Route::get('dashboard', 'DashboardController');
 
 /*
  * Resource routes
  */
 Route::resource('post', 'PostController');
+Route::resource('dashboard', 'DashboardController');
 //Route::resource('comment', 'CommentController');
 
 /*

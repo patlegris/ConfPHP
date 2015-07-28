@@ -43,6 +43,35 @@ dolore eu iis litteris a pariatur. Sunt vidisse ab occaecat anim quem est
 dolore eu iis litteris a pariatur.',
                 'post_id' => 4,
             ],
+            [
+                'email' => 'jacques@gmail.com',
+                'message' => 'Offendit esse ex officia domesticarum, occaecat ea quibusdam, legam domesticarum
+mentitum anim deserunt, fabulas fugiat laboris appellat. Te se tamen voluptate,
+varias mandaremus ut noster labore.',
+                'post_id' => 4,
+
+            ],
+            [
+                'email' => 'Alain@gmail.com',
+                'message' => 'Ubi duis occaecat ullamco, vidisse aute nam
+tempor transferrem. Est iis quorum ingeniis. Quo aliqua eiusmod eruditionem,
+eram sed deserunt non enim aut et varias firmissimum non cillum aut hic noster
+consequat.',
+                'post_id' => 3,
+            ],
+            [
+                'email' => 'robert@laposte.net',
+                'message' => 'Sunt eiusmod non firmissimum. Aliquip esse amet et summis, nam malis
+ullamco. Ad elit sed quid.',
+                'post_id' => 2,
+            ],
+            [
+                'email' => 'patrick@gmail.com',
+                'message' => 'Quamquam sunt vidisse ab occaecat anim quem est
+dolore eu iis litteris a pariatur. Sunt vidisse ab occaecat anim quem est
+dolore eu iis litteris a pariatur.',
+                'post_id' => 1,
+            ],
         ]);
     }
 }
