@@ -25,12 +25,13 @@
         <section id="commentaires">
             <h3 class="comment">Commentaires</h3>
             @if(count($post->getComment())>0)
-                <ul>
+
                     @foreach($post->getComment() as $comment)
-                        <li>{{$comment->email}}</li>
-                        {{$comment->message}}<br/>
+                    <p><b>{{$comment->email}}</b><p/>
+                    <p>{{$comment->date}}</p>
+                    <p>{{$comment->message}}</p>
                     @endforeach
-                </ul>
+
             @else
                 <p>Il n'y a pas de commentaires sur ce sujet, soyez le premier !</p>
             @endif
