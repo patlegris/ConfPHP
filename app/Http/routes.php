@@ -30,15 +30,15 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 /*
  * Dashboard routes
  */
-Route::get('dashboard', 'DashboardController@indexPost');
+//Route::get('dashboard', 'DashboardController@indexPost');
 
 /*
  * Resource routes
  */
-Route::resource('conference', 'PostController');
-Route::resource('comment', 'CommentController');
+Route::resource('post', 'PostController');
+//Route::resource('comment', 'CommentController');
 
 /*
  * Other specific routes
  */
-Route::put('conference/{id}/status', 'PostController@updateStatus');
+//Route::put('conference/{id}/status', 'PostController@updateStatus');
