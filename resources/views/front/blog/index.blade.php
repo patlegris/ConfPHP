@@ -1,4 +1,4 @@
-@extends('main')
+@extends('frontmain')
 @section('body')
     <div id="main" role="main">
         <section id="post">

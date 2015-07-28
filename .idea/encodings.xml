@@ -8,10 +8,10 @@
     <file url="file://$PROJECT_DIR$/resources/views/errors/503.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/front/blog/index.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/front/blog/single.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/frontmain.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/includes/footer.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/includes/header.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/includes/sidebar.blade.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/resources/views/main.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/welcome.blade.php" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

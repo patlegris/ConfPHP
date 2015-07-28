@@ -1,4 +1,4 @@
-@extends('back')
+@extends('dashmain')
 @section('body')
     <div id="main" role="main">
         <section id="post">
