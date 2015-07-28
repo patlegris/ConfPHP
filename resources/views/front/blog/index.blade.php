@@ -18,7 +18,11 @@
                             @foreach( $post->tags as $tag)
                                 <a href="{{url('tag/'.$tag->id)}}">{{$tag->name}}/</a>
                             @endforeach
-                            <br><br><h3 class="date">début: {{$post->date_start}} - fin: {{$post->date_end}}</h3>
+                            <br><br>
+                            <p>Nombre de commentaires:
+                                <a href="{{url('conference', [$post->id, $post->slug])}}#comment ">{{$post->nbComment()}}</a>
+                            </p>
+                            <h3 class="date">début: {{$post->date_start}} - fin: {{$post->date_end}}</h3>
                         @endforeach
                     </ul>
                 @else
