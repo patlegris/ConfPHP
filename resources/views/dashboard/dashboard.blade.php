@@ -1,6 +1,6 @@
 @extends('dashmain')
 @section('body')
-    <body class="skin-blue sidebar-mini">
+    <body class="skin-purple-light sidebar-mini">
     <div class="wrapper">
 
         <!-- Main Header -->
@@ -203,7 +203,8 @@
                 <ul class="sidebar-menu">
                     <li class="header">BLOG</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="{{url('#')}}"><i class="fa fa-link"></i> <span>New Conférence</span></a>
+                    <li class="active"><a href="{{url('#')}}"><i class="fa fa-link"></i> <span>Créer une
+                                Conférence</span></a>
                     </li>
                     {{--<li><a href="#"><i class="fa fa-link"></i> <span>New Comment</span></a></li>--}}
                     <li class="treeview">

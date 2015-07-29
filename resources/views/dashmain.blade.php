@@ -3,7 +3,6 @@
     @include('includes.head')
     <link rel="stylesheet" href="{{asset('assets/css/style_for_dashboard.css')}}">
 
-</head>
 
 <!-- FontAwesome 4.3.0 -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
@@ -28,6 +27,7 @@
 <!-- bootstrap wysihtml5 - text editor -->
 <link href="{{asset('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet"
       type="text/css"/>
+</head>
 
 <body>
 
