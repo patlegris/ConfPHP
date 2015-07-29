@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all()->sortByDesc('date_start');
-        return view('dashboard.post', compact('posts'));
+        return view('dashboard.dashboard', compact('posts'));
     }
 
     /**

@@ -36,7 +36,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
  * Resource routes
  */
 Route::resource('post', 'PostController');
-Route::resource('dashboard', 'DashboardController');
+Route::resource('dashboard', 'PostController');
 //Route::resource('comment', 'CommentController');
 
 /*

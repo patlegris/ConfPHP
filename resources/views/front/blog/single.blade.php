@@ -24,19 +24,32 @@
 
         <section id="commentaires">
             <h3 class="comment">Commentaires</h3>
-            @if(count($post->getComment())>0)
 
+            {{--<h2>Laissez votre commentaire</h2>--}}
+            {{--<br>--}}
+            {{--{!! Form::open([ 'url' => 'comment' ]) !!}--}}
+            {{--{!! Form::hidden('post_id', $post->id) !!}--}}
+            {{--{!! Form::label('email', 'Email:') !!}--}}
+            {{--{!!Form::text('email', old('email'), ['class'=>'form-control']) !!}<br/><br/>--}}
+            {{--{!! $errors->first('email', '<span class="help-block">:message</span>') !!}--}}
+            {{--{!! Form::label('message', 'Commentaire:') !!}<br/>--}}
+            {{--{!!Form::textarea('message', '', ['cols'=> 30, 'rows' => 10]) !!}<br/><br/>--}}
+            {{--{!! $errors->first('message', '<span class="help-block">:message</span>') !!}--}}
+            {{--{!!Form::submit('Valider', ['class'=>'btn', 'required']) !!}--}}
+            {{--{!! Form::close() !!}<br/>--}}
+
+            <h2>Précédents commentaires</h2>
+
+            @if(count($post->getComment())>0)
                     @foreach($post->getComment() as $comment)
                     <p><b>{{$comment->email}}</b><p/>
                     <p>{{$comment->date}}</p>
                     <p>{{$comment->message}}</p>
                     @endforeach
-
             @else
                 <p>Il n'y a pas de commentaires sur ce sujet, soyez le premier !</p>
             @endif
+
         </section>
-            {{--<section id="">--}}
-        {{--</section>--}}
     </div>
 @endsection

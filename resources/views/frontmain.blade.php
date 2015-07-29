@@ -1,6 +1,8 @@
 <!doctype html>
-{{--Compatibility script IE, Meta & Scripts of the page--}}
-@include('includes.head')
+<head>
+    @include('includes.head')
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+</head>
 
 <body>
 {{--Header of the page--}}
