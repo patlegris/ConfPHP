@@ -99,4 +99,9 @@ class PostController extends Controller
         $post->save();
         return redirect('dashboard');
     }
+
+    public function softDelete($id)
+    {
+        $post = Post::find($id);
+    }
 }

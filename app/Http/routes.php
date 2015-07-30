@@ -21,6 +21,7 @@ Route::get('about', 'BlogController@about');
 Route::get('contact', 'BlogController@contact');
 Route::get('term', 'BlogController@term');
 Route::put('dashboard/{id}/change-status', 'PostController@statusChange');
+Route::delete('dashboard/{id}/soft-delete', 'PostController@softDelete');
 
 /* --------------------------------------------------------- *\
    Auth routes
