@@ -56,65 +56,40 @@
             <!-- /.sidebar -->
         </aside>
 
-        <!-- Main content -->
-        @section('content')
-                <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    Conférences
-                    <small>Conf-PHP</small>
-                </h1>
-                <div class="post">
-                    <table class="u-full-width table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Statut</th>
-                            <th>Titre</th>
-                            <th>Date début et fin</th>
-                            <th>Mots clefs</th>
-                            <th>Changer le statut</th>
-                            <th>Supprimer</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($posts as $post)
-                            <tr>
-                                <td>{{$post->status}}</td>
-                                <td>{{$post->title}}</td>
-                                <td>{{$post->date_start.' - '.$post->date_end}}</td>
-                                <td>
-                                    @foreach($post->tags()->get() as $tag)
-                                        {{$tag->name.'. '}}
-                                    @endforeach
-                                </td>
-                                <td>
-                                    {!!Form::open([
-                                'url' => 'dashboard/'.$post->id.'/change-status',
-                                'method' => 'put',
-                                ])!!}
-                                    @if($post->status=='publish')
-                                        <button class="btn btn-warning">UN-PUBLISH</button>
-                                    @else
-                                        <button class="btn btn-success">PUBLISH</button>
-                                    @endif
-                                    {!!Form::close()!!}
-                                </td>
-                                <td>
-                                    {!!Form::open([
-                                'url' => 'dashboard/'.$post->id.'/soft-delete',
-                                'method' => 'put',
-                                ])!!}
-                                    <button class="btn btn-danger">SOFT DELETE</button>
-                                </td>
-                                {!!Form::close()!!}
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+        {!! Form::open(['url'=>'post', 'method' => 'POST']) !!}
+        <div class="form-group col-lg-6">
+            <div>
+                {!! Form::label('title', 'Title(*):',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'title']) !!}
+                {!! Form::text('title', old('title'), ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'title', 'required']) !!}
+                {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
+            </div>
+
+            <div>
+                {!! Form::label('content', 'Content:',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'content']) !!}
+                {!! Form::textarea('content', '',['cols'=>30, 'rows'=>10, 'id' => 'content','placeholder' => 'Ecrivez votre post ici','required']) !!}
+                {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
+            </div>
+
+            <div>
+                {!! Form::label('status', 'Status:',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'status']) !!}
+                publier : {!! Form::radio('status', 'publish',['cols'=>30, 'rows'=>10, 'required']) !!}
+                brouillon : {!! Form::radio('status', 'unpublish',['cols'=>30, 'rows'=>10, 'required']) !!}
+                {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
+            </div>
+
+            @if(count($categories)>0)
+                @foreach($categories as $category)
+                    <div class="checkbox">
+                        {!! Form::label('category', $category->title,['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=> 'cat'.$category->id]) !!}
+                        {!! Form::radio('category', $category->id, ['id' => 'cat'.$category->id, 'required'])!!}
+                    </div>
+                @endforeach
+            @endif
+
+            <div>
+                {!! Form::submit('Create') !!}
+                {!! Form::close() !!}
+            </div>
         </div>
         @show
 

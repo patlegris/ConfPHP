@@ -50,9 +50,9 @@ class BlogController extends Controller
         return view('front.blog.contact');
     }
 
-    public function term()
+    public function mentions()
     {
-        return view('front.blog.term');
+        return view('front.blog.mentions');
     }
 
 }
