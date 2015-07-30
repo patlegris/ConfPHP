@@ -87,4 +87,16 @@ class PostController extends Controller
     {
         //
     }
+
+    public function statusChange($id)
+    {
+        $post = Post::find($id);
+        if (($post->status) == 'publish') {
+            $post->status = 'un-publish';
+        } else {
+            $post->status = 'publish';
+        }
+        $post->save();
+        return redirect('dashboard');
+    }
 }

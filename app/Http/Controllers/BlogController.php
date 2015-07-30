@@ -47,6 +47,12 @@ class BlogController extends Controller
      */
     public function contact()
     {
-        return view('front.contact.contact');
+        return view('front.blog.contact');
     }
+
+    public function term()
+    {
+        return view('front.blog.term');
+    }
+
 }

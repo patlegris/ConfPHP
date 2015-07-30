@@ -229,35 +229,50 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Commentaires en attente de validation
+                    Conférences
                     <small>Conf-PHP</small>
                 </h1>
                 <div class="post">
-                    <table class="u-full-width">
+                    <table class="u-full-width table table-striped">
+                        <thead>
                         <tr>
-                            <th>id</th>
-                            <th>e-mail</th>
-                            <th>Date</th>
-                            <th>Message</th>
-                            <th>Modification</th>
-                            <th>Suppression</th>
+                            <th>Statut</th>
+                            <th>Titre</th>
+                            <th>Date début et fin</th>
+                            <th>Mots clefs</th>
+                            <th>Changer le statut</th>
+                            <th>Supprimer</th>
                         </tr>
-                        {{--<tbody>--}}
-                        {{--@foreach($post->getComment() as $comment)--}}
-                        {{--<tr>--}}
-                        {{--<td>{{$comment->id}}--}}
-                        {{--<td/>--}}
-                        {{--<td/>--}}
-                        {{--<td>{{$comment->email}}--}}
-                        {{--<td/>--}}
-                        {{--<td>{{$comment->date}}--}}
-                        {{--<td/>--}}
-                        {{--<td>{{$comment->message}}--}}
-                        {{--<td>MODIFIER</td>--}}
-                        {{--<td>SUPPRIMER</td>--}}
-                        {{--</tr>--}}
-                        {{--@endforeach--}}
-                        {{--</tbody>--}}
+                        </thead>
+                        <tbody>
+                        @foreach($posts as $post)
+                            <tr>
+                                <td>{{$post->status}}</td>
+                                <td>{{$post->title}}</td>
+                                <td>{{$post->date_start.' - '.$post->date_end}}</td>
+                                <td>
+                                    @foreach($post->tags()->get() as $tag)
+                                        {{$tag->name.'. '}}
+                                    @endforeach
+                                </td>
+                                <td>
+                                    {!!Form::open([
+                                'url' => 'dashboard/'.$post->id.'/change-status',
+                                'method' => 'put',
+                                ])!!}
+                                    @if($post->status=='publish')
+                                        <button class="btn btn-warning">UN-PUBLISH</button>
+                                    @else
+                                        <button class="btn btn-success">PUBLISH</button>
+                                    @endif
+                                    {!!Form::close()!!}
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger">SUPPRIMER</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
                     </table>
                 </div>
             </section>

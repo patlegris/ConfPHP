@@ -56,11 +56,4 @@ class Post extends Model
         return $listComment;
     }
 
-//    public function getCommentUnpublish()
-//    {
-//        $listComment = Comment::unpublished($this->id)->get();
-//        return $listComment;
-//    }
-
-
 }

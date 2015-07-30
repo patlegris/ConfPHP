@@ -10,6 +10,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/html" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jeremeamia/SuperClosure" />
@@ -75,6 +76,7 @@
           <root url="file://$MODULE_DIR$/vendor/psy/psysh" />
           <root url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/vendor/illuminate/html" />
           <root url="file://$MODULE_DIR$/vendor/symfony/console" />
           <root url="file://$MODULE_DIR$/vendor/phpspec/phpspec" />
           <root url="file://$MODULE_DIR$/vendor/symfony/dom-crawler" />
@@ -130,6 +132,7 @@
           <root url="file://$MODULE_DIR$/vendor/psy/psysh" />
           <root url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/vendor/illuminate/html" />
           <root url="file://$MODULE_DIR$/vendor/symfony/console" />
           <root url="file://$MODULE_DIR$/vendor/phpspec/phpspec" />
           <root url="file://$MODULE_DIR$/vendor/symfony/dom-crawler" />
