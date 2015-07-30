@@ -37,15 +37,15 @@ class BlogController extends Controller
     /**
      * @return accesss to the page "about"
      */
-    public function getAbout()
+    public function about()
     {
-        return view('front.about.about');
+        return view('front.blog.about');
     }
 
     /**
      * @return accesss to the page "contact"
      */
-    public function getContact()
+    public function contact()
     {
         return view('front.contact.contact');
     }

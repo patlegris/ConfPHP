@@ -20,26 +20,26 @@ Route::get('tag/{id}', 'BlogController@showTag');
 Route::get('about', 'BlogController@about');
 Route::get('contact', 'BlogController@contact');
 
-/*
- * Auth routes
- */
+/* --------------------------------------------------------- *\
+   Auth routes
+\* --------------------------------------------------------- */
 Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-/*
- * Dashboard routes
- */
+/* --------------------------------------------------------- *\
+   Dashboard routes
+\* --------------------------------------------------------- */
 //Route::get('dashboard', 'DashboardController');
 
-/*
- * Resource routes
- */
+/* --------------------------------------------------------- *\
+   Resource routes
+\* --------------------------------------------------------- */
 Route::resource('post', 'PostController');
 Route::resource('dashboard', 'PostController');
 //Route::resource('comment', 'CommentController');
 
-/*
- * Other specific routes
- */
+/* --------------------------------------------------------- *\
+   Other specific routes
+\* --------------------------------------------------------- */
 //Route::put('conference/{id}/status', 'PostController@updateStatus');

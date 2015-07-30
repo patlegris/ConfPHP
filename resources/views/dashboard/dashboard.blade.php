@@ -229,23 +229,45 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Page d'administration
+                    Commentaires en attente de validation
                     <small>Conf-PHP</small>
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="{{url('dashboard')}}"><i class="fa fa-dashboard"></i> Main</a></li>
-                    <li class="active">Here</li>
-                </ol>
+                <div class="post">
+                    <table class="u-full-width">
+                        <tr>
+                            <th>id</th>
+                            <th>e-mail</th>
+                            <th>Date</th>
+                            <th>Message</th>
+                            <th>Modification</th>
+                            <th>Suppression</th>
+                        </tr>
+                        {{--<tbody>--}}
+                        {{--@foreach($post->getComment() as $comment)--}}
+                        {{--<tr>--}}
+                        {{--<td>{{$comment->id}}--}}
+                        {{--<td/>--}}
+                        {{--<td/>--}}
+                        {{--<td>{{$comment->email}}--}}
+                        {{--<td/>--}}
+                        {{--<td>{{$comment->date}}--}}
+                        {{--<td/>--}}
+                        {{--<td>{{$comment->message}}--}}
+                        {{--<td>MODIFIER</td>--}}
+                        {{--<td>SUPPRIMER</td>--}}
+                        {{--</tr>--}}
+                        {{--@endforeach--}}
+                        {{--</tbody>--}}
+                    </table>
+                </div>
             </section>
 
             <!-- Main content -->
             <section class="content">
 
                 @section('content')
-                    <ul>
-                        <li><a href="{{url('comment')}}">Gestion des commentaires</a></li>
-                        <li><a href="{{url('post')}}">Gestion des conférences</a></li>
-                    </ul>
+
+
                 @show
 
             </section>
@@ -287,23 +309,8 @@
                     {{--</a>--}}
                     {{--</li>--}}
                     {{--</ul><!-- /.control-sidebar-menu -->--}}
-
-                    {{--<h3 class="control-sidebar-heading">Tasks Progress</h3>
-                    <ul class="control-sidebar-menu">
-                        <li>
-                            <a href="javascript::;">
-                                <h4 class="control-sidebar-subheading">
-                                    Custom Template Design
-                                    <span class="label label-danger pull-right">70%</span>
-                                </h4>
-                                <div class="progress progress-xxs">
-                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>--}}<!-- /.control-sidebar-menu -->
-
                 </div>
+
                 <!-- /.tab-pane -->
                 <!-- Stats tab content -->
                 <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>

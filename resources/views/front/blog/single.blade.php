@@ -38,8 +38,6 @@
             {{--{!!Form::submit('Valider', ['class'=>'btn', 'required']) !!}--}}
             {{--{!! Form::close() !!}<br/>--}}
 
-            <h2>Précédents commentaires</h2>
-
             @if(count($post->getComment())>0)
                     @foreach($post->getComment() as $comment)
                     <p><b>{{$comment->email}}</b><p/>
