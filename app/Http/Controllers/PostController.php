@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use App\Comment;
 use Illuminate\Http\Request;
 
@@ -38,9 +39,21 @@ class PostController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+        $post->tags()->attach($request->input('tags'));
+        if ($request->hasFile('thumbnail_link')) {
+            $file = $request->file('thumbnail_link');
+            $ext = $file->getClientOriginalExtension();
+            $fileName = $post->slug . '.' . $ext;
+            $file->move('./assets/images/confs', $fileName);
+            $post->thumbnail_link = $fileName;
+            $post->save();
+        }
+        return redirect()->to('dashboard.dashboard')->with('message', Alert::message('La conférence "' . $post->title . '"
+         est
+        créée', 'success'));
     }
 
     /**
@@ -51,7 +64,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -62,7 +75,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        $tags = Tag::all();
+        $title = 'Editer une conférence';
+        return view('dashboard.edit', compact('post', 'tags', 'title'));
     }
 
     /**
@@ -72,9 +88,22 @@ class PostController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update($id, PostRequest $request)
     {
-        //
+        $post = Post::find($id);
+        $post->tags()->detach();
+        $post->update($request->all());
+        $post->tags()->attach($request->input('tags'));
+        if ($request->hasFile('thumbnail_link')) {
+            $file = $request->file('thumbnail_link');
+            $ext = $file->getClientOriginalExtension();
+            $fileName = $post->slug . '.' . $ext;
+            $file->move('./assets/images/confs', $fileName);
+            $post->thumbnail_link = $fileName;
+            $post->save();
+        }
+        return redirect()->to('dashboard.dashboard')->with('message', Alert::message('conférence "' . $post->title . '"
+        modifiée avec succès', 'info'));
     }
 
     /**

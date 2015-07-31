@@ -2,7 +2,6 @@
 
 namespace App;
 
-//use SoftDeletes;
 use App\Http\Controllers\CommentController;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -52,6 +51,16 @@ class Post extends Model
     public function getDateEndAttribute($value)
     {
         return Carbon::parse($value)->format('d-m-Y H:i:s');
+    }
+
+    public function setDateStartAttribute($value)
+    {
+        $this->attributes['date_start'] = Carbon::createFromFormat('d-m-Y H:i:s', $value)->toDateTimeString();
+    }
+
+    public function setDateEndAttribute($value)
+    {
+        $this->attributes['date_end'] = Carbon::createFromFormat('d-m-Y H:i:s', $value)->toDateTimeString();
     }
 
     public function scopePublished($query, $id = null)

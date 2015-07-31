@@ -72,77 +72,136 @@
                     <div class="form-group col-lg-6">
                         <br>
 
+                        {{--Titre--}}
                         <div>
                             {!! Form::label('title', 'Titre :',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'title']) !!}
-                            {!! Form::text('title', old('title'), ['cols'=>100, 'class' => 'form-control', 'id' => 'title', 'placeholder' => 'title', 'required']) !!}
+                            {!! Form::text('title', old('title'), ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'title', 'required']) !!}
                             {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
+                            @foreach($errors->get('title') as $message)
+                                <div class="text-danger text"><em>{{ $message }}</em></div>
+                            @endforeach
                         </div>
 
+                        {{--Excerpt - résumé--}}
                         <div>
+                            <br>
                             {!! Form::label('excerpt', 'Résumé :',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'excerpt']) !!}
-                            {!! Form::textarea('excerpt', '',['cols'=>100, 'rows'=>2, 'id' => 'content','placeholder' => 'Ecrivez votre résumé ici (200 caractères max.)','required']) !!}
+                            {!! Form::textarea('excerpt', '',['cols'=>101, 'rows'=>2, 'maxlength' => '150', 'id' => 'content','placeholder' => 'Ecrivez votre résumé ici (150 caractères max.)','required']) !!}
                             {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
+                            @foreach($errors->get('excerpt') as $message)
+                                <div class="text-danger text"><em>{{ $message }}</em></div>
+                            @endforeach
                         </div>
 
+                        {{--Content--}}
                         <div>
+                            <br>
                             {!! Form::label('content', 'Contenu :',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'content']) !!}
-                            {!! Form::textarea('content', '',['cols'=>100, 'rows'=>10, 'id' => 'content','placeholder' => 'Ecrivez votre post ici','required']) !!}
+                            {!! Form::textarea('content', '',['cols'=>101, 'rows'=>10, 'id' => 'content','placeholder' => 'Ecrivez la présentation de votre conférence ici','required']) !!}
                             {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
+                            @foreach($errors->get('content') as $message)
+                                <div class="text-danger text"><em>{{ $message }}</em></div>
+                            @endforeach
                         </div>
 
+                        {{--slug--}}
                         <div>
-                            <div class="well">
-                                {{--<div id="datetimepicker1" class="input-append date">--}}
-                                {{--<input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>--}}
-                                {!! Form::label('date_start', 'Date de debut :'!!}
-                                {!! Form::text('data-format', old('data-format'), ['id' => 'datetimepicker1', 'class' => 'well input-append date', 'placeholder' => 'title', 'required']) !!}
-                                <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-      </i>
-    </span>
+                            <br>
+                            {!! Form::label('slug', 'Slug :', ['class' => 'col-sm-2 col-md-2 col-lg-2 control-label']) !!}
+                            {!! Form::text('slug', '', ['class' => 'form-control', 'placeholder' => 'Slug pour le référencement']) !!}
+                            @foreach($errors->get('slug') as $message)
+                                <div class="text-danger text"><em>{{ $message }}</em></div>
+                            @endforeach
+                            <br>
+                        </div>
+
+                        {{--Dates--}}
+                        <div class="container">
+                            <div class="form-group input-group col-md-4">
+                                <div class='input-group date' id='datetimepicker6'>
+                                    {!! form::label('date_start',' date de début: ' , ['class'=>'input-group-addon','required']) !!}
+                                    {!! Form::text('date_start', old('date_start'), ['class'=>'form-control','required']) !!}
+                                    {!! $errors->first('date_start', '<span class="help-block">:message</span>') !!}
+                                    <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+                                </div>
+                            </div>
+                            <div class="form-group input-group col-md-4">
+                                <div class='input-group date' id='datetimepicker7'>
+                                    {!! form::label('date_end', 'date de fin: ', ['class'=>'input-group-addon','required']) !!}
+                                    {!! Form::text('date_end', old('date_end'), ['class'=>'form-control','required']) !!}
+                                    {!! $errors->first('date_end', '<span class="help-block">:message</span>') !!}
+                                    <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+                                </div>
                             </div>
                         </div>
 
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker1').datetimepicker({
-                                    language: 'pt-BR'
-                                });
-                            });
-                        </script>
-                    </div>
+                        {{--tags--}}
+                        {{--<div class="form-group">--}}
+                        {{--{!! Form::label('tags', 'Tags', ['class' => 'col-lg-offset-2 col-lg-1 control-label']) !!}--}}
+                        {{--<div class="col-lg-7">--}}
+                        {{--@foreach($tags as $tag)--}}
+                        {{--<div class="checkbox">--}}
+                        {{--<label>--}}
+                        {{--{!! Form::checkbox('tags[]', $tag->id) !!}--}}
+                        {{--{{ $tag->name }}--}}
+                        {{--</label>--}}
+                        {{--</div>--}}
+                        {{--@endforeach--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
 
-                    <div>
-                        {!! Form::label('status', 'Status:',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'status']) !!}
-                        Publish : {!! Form::radio('status', 'publish',['cols'=>100, 'rows'=>10, 'required']) !!}
-                        Un-publish : {!! Form::radio('status', 'un-publish',['cols'=>30, 'rows'=>10, 'required'])
+                        {{--url--}}
+                        <div>
+                            <br>
+                            {!! Form::text('url_site', 'Remplacez ce texte par l\'url du site officiel de la conférence', ['class' => 'form-control', 'placeholder' => 'http://www.my-conference.com']) !!}
+                            @foreach($errors->get('url_site') as $message)
+                                <div class="text-danger"><em>{{ $message }}</em></div>
+                            @endforeach
+                        </div>
+
+                        {{--Thumbnail--}}
+                        <div class="form-group">
+                            <br>
+                            FIchier image de la conférence :
+                            {!! Form::label('thumbnail_link', 'Image', ['class' => 'control-label']) !!}
+                            <div class="col-lg-7">
+                                <div class="input-group ">
+                                    {!! Form::file('thumbnail_link') !!}
+                                    @foreach($errors->get('thumbnail_link') as $message)
+                                        <div class="text-danger"><em>{{ $message }}</em></div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+
+                        {{--Status--}}
+                        <div>
+                            <br>
+                            {!! Form::label('status', 'Status:',['class' => 'col-sm-2 col-md-2 col-lg-2
+                            control-label', 'for'=>'status']) !!}
+                            Publish : {!! Form::radio('status', 'publish',['cols'=>100, 'rows'=>10, 'required']) !!}
+                            Un-publish : {!! Form::radio('status', 'un-publish',['cols'=>30, 'rows'=>10, 'required'])
                              !!}
-                        {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
-                    </div>
+                            {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
+                        </div>
 
-                    <div>
-                        {!! Form::submit('Envoyer') !!}
-                        {!! Form::close() !!}
+                        {{--Submit--}}
+                        <div>
+                            {!! Form::submit('Envoyer') !!}
+                            {!! Form::close() !!}
+                        </div>
                     </div>
                 </div>
-                {{--</div>--}}
             </section>
         </div>
+    </div>
         @show
 
-                <!-- /.content-wrapper -->
-
-        {{--<!-- Main Footer -->--}}
-        {{--<footer class="main-footer">--}}
-        {{--<!-- To the right -->--}}
-        {{--<div class="pull-right hidden-xs">--}}
-        {{--Design by Patrick LECOINTRE - 2015--}}
-        {{--</div>--}}
-        {{--<!-- Default to the left -->--}}
-        {{--<strong>Copyright &copy; 2015 <a href="{{url('about')}}">ConfPHP</a>.</strong> All rights reserved.--}}
-        {{--</footer>--}}
-
-        <!-- Control Sidebar -->
+                <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Create the tabs -->
             <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
@@ -193,6 +252,10 @@
     <script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('assets/js/app.min.js')}}" type="text/javascript"></script>
+    <!-- main JS -->
+    <script src="{{asset('assets/js/main.js')}}" type="text/javascript"></script>
+    <!-- Datetimepicker JS -->
+    <script src="{{asset('assets/js/bootstrap-datetimepicker.min.js')}}" type="text/javascript"></script>
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
           Both of these plugins are recommended to enhance the
