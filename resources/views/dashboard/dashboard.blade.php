@@ -151,7 +151,7 @@
                         <div class="form-group">
                             <p><a href="{{url('/')}}">Retour au site</a></p>
 
-                            <p><a href="{{url('auth/logout')}}">Logout</a></p>
+                            <p><a href="{{url('/')}}">Logout</a></p>
                             {{--<label class="control-sidebar-subheading">
                                 Report panel usage
                                 <input type="checkbox" class="pull-right" checked />

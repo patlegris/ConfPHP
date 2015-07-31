@@ -77,21 +77,12 @@
                 {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
             </div>
 
-            @if(count($categories)>0)
-                @foreach($categories as $category)
-                    <div class="checkbox">
-                        {!! Form::label('category', $category->title,['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=> 'cat'.$category->id]) !!}
-                        {!! Form::radio('category', $category->id, ['id' => 'cat'.$category->id, 'required'])!!}
-                    </div>
-                @endforeach
-            @endif
-
             <div>
                 {!! Form::submit('Create') !!}
                 {!! Form::close() !!}
             </div>
         </div>
-        @show
+        {{--@show--}}
 
                 <!-- /.content-wrapper -->
 
