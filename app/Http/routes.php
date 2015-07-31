@@ -21,6 +21,7 @@ Route::get('about', 'BlogController@about');
 Route::get('contact', 'BlogController@contact');
 Route::get('term', 'BlogController@term');
 Route::put('dashboard/{id}/change-status', 'PostController@statusChange');
+Route::put('dashboard/{id}/destroy', 'PostController@destroy');
 
 /* --------------------------------------------------------- *\
    Auth routes
@@ -39,6 +40,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 \* --------------------------------------------------------- */
 Route::resource('post', 'PostController');
 Route::resource('dashboard', 'PostController');
+Route::resource('create', 'PostController@create');
 //Route::resource('comment', 'CommentController');
 
 /* --------------------------------------------------------- *\

@@ -45,7 +45,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">BLOG</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="{{url('#')}}"><i class="fa fa-link"></i> <span>Créer une
+                    <li class="active"><a href="{{url('create')}}"><i class="fa fa-link"></i> <span>Créer une
                             Conférence</span></a>
                     </li>
                     <li class="header"></li>
@@ -55,6 +55,7 @@
             </section>
             <!-- /.sidebar -->
         </aside>
+
 
         <!-- Main content -->
         @section('content')
@@ -103,10 +104,10 @@
                                 </td>
                                 <td>
                                     {!!Form::open([
-                                'url' => 'dashboard/'.$post->id.'/soft-delete',
+                                'url' => 'dashboard/'.$post->id.'/destroy',
                                 'method' => 'put',
                                 ])!!}
-                                    <button class="btn btn-danger">SOFT DELETE</button>
+                                    <button class="btn btn-danger">SOFT-DELETE</button>
                                 </td>
                                 {!!Form::close()!!}
                             </tr>

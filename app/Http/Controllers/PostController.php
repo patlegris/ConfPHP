@@ -29,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.create');
     }
 
     /**
@@ -85,7 +85,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return 'La conférence est supprimée de l\'agenda';
     }
 
     public function statusChange($id)
@@ -100,8 +101,8 @@ class PostController extends Controller
         return redirect('dashboard');
     }
 
-    public function softDelete($id)
-    {
-        $post = Post::find($id);
-    }
+//    public function softDelete($id)
+//    {
+//        $post = Post::delete($id);
+//    }
 }

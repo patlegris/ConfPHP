@@ -29,6 +29,9 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{asset('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet"
           type="text/css"/>
+    {{--bootstrap datetime picker--}}
+    <link href="{{asset('assets/css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
+
 </head>
 
 <body>

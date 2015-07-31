@@ -45,7 +45,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">BLOG</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="{{url('#')}}"><i class="fa fa-link"></i> <span>Créer une
+                    <li class="active"><a href="{{url('create')}}"><i class="fa fa-link"></i> <span>Créer une
                             Conférence</span></a>
                     </li>
                     <li class="header"></li>
@@ -56,45 +56,91 @@
             <!-- /.sidebar -->
         </aside>
 
-        {!! Form::open(['url'=>'post', 'method' => 'POST']) !!}
-        <div class="form-group col-lg-6">
-            <div>
-                {!! Form::label('title', 'Title(*):',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'title']) !!}
-                {!! Form::text('title', old('title'), ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'title', 'required']) !!}
-                {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
-            </div>
 
-            <div>
-                {!! Form::label('content', 'Content:',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'content']) !!}
-                {!! Form::textarea('content', '',['cols'=>30, 'rows'=>10, 'id' => 'content','placeholder' => 'Ecrivez votre post ici','required']) !!}
-                {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
-            </div>
+        <!-- Main content -->
+        @section('content')
+                <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Conférences
+                    <small>Conf-PHP</small>
+                </h1>
+                <div class="post">
+                    {!! Form::open(['url'=>'post', 'method' => 'POST']) !!}
+                    <div class="form-group col-lg-6">
+                        <br>
 
-            <div>
-                {!! Form::label('status', 'Status:',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'status']) !!}
-                publier : {!! Form::radio('status', 'publish',['cols'=>30, 'rows'=>10, 'required']) !!}
-                brouillon : {!! Form::radio('status', 'unpublish',['cols'=>30, 'rows'=>10, 'required']) !!}
-                {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
-            </div>
+                        <div>
+                            {!! Form::label('title', 'Titre :',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'title']) !!}
+                            {!! Form::text('title', old('title'), ['cols'=>100, 'class' => 'form-control', 'id' => 'title', 'placeholder' => 'title', 'required']) !!}
+                            {!! $errors->first('title', '<span class="help-block">:message</span>') !!}
+                        </div>
 
-            <div>
-                {!! Form::submit('Create') !!}
-                {!! Form::close() !!}
-            </div>
+                        <div>
+                            {!! Form::label('excerpt', 'Résumé :',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'excerpt']) !!}
+                            {!! Form::textarea('excerpt', '',['cols'=>100, 'rows'=>2, 'id' => 'content','placeholder' => 'Ecrivez votre résumé ici (200 caractères max.)','required']) !!}
+                            {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
+                        </div>
+
+                        <div>
+                            {!! Form::label('content', 'Contenu :',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'content']) !!}
+                            {!! Form::textarea('content', '',['cols'=>100, 'rows'=>10, 'id' => 'content','placeholder' => 'Ecrivez votre post ici','required']) !!}
+                            {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
+                        </div>
+
+                        <div>
+                            <div class="well">
+                                {{--<div id="datetimepicker1" class="input-append date">--}}
+                                {{--<input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>--}}
+                                {!! Form::label('date_start', 'Date de debut :'!!}
+                                {!! Form::text('data-format', old('data-format'), ['id' => 'datetimepicker1', 'class' => 'well input-append date', 'placeholder' => 'title', 'required']) !!}
+                                <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker({
+                                    language: 'pt-BR'
+                                });
+                            });
+                        </script>
+                    </div>
+
+                    <div>
+                        {!! Form::label('status', 'Status:',['class' => 'col-sm-2 col-md-2 col-lg-2 control-label', 'for'=>'status']) !!}
+                        Publish : {!! Form::radio('status', 'publish',['cols'=>100, 'rows'=>10, 'required']) !!}
+                        Un-publish : {!! Form::radio('status', 'un-publish',['cols'=>30, 'rows'=>10, 'required'])
+                             !!}
+                        {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
+                    </div>
+
+                    <div>
+                        {!! Form::submit('Envoyer') !!}
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+                {{--</div>--}}
+            </section>
         </div>
-        {{--@show--}}
+        @show
 
                 <!-- /.content-wrapper -->
 
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="pull-right hidden-xs">
-                Design by Patrick LECOINTRE - 2015
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2015 <a href="{{url('about')}}">ConfPHP</a>.</strong> All rights reserved.
-        </footer>
+        {{--<!-- Main Footer -->--}}
+        {{--<footer class="main-footer">--}}
+        {{--<!-- To the right -->--}}
+        {{--<div class="pull-right hidden-xs">--}}
+        {{--Design by Patrick LECOINTRE - 2015--}}
+        {{--</div>--}}
+        {{--<!-- Default to the left -->--}}
+        {{--<strong>Copyright &copy; 2015 <a href="{{url('about')}}">ConfPHP</a>.</strong> All rights reserved.--}}
+        {{--</footer>--}}
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -117,7 +163,7 @@
                         <div class="form-group">
                             <p><a href="{{url('/')}}">Retour au site</a></p>
 
-                            <p><a href="{{url('auth/logout')}}">Logout</a></p>
+                            <p><a href="{{url('/')}}">Logout</a></p>
                             {{--<label class="control-sidebar-subheading">
                                 Report panel usage
                                 <input type="checkbox" class="pull-right" checked />
