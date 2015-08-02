@@ -26,9 +26,14 @@ Route::put('dashboard/{id}/destroy', 'PostController@destroy');
 /* --------------------------------------------------------- *\
    Auth routes
 \* --------------------------------------------------------- */
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+//Route::get('login', 'Auth\AuthController@getLogin');
+//Route::post('login', 'Auth\AuthController@postLogin');
+//Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 
 /* --------------------------------------------------------- *\
    Dashboard routes
@@ -41,7 +46,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::resource('post', 'PostController');
 Route::resource('dashboard', 'PostController');
 Route::resource('create', 'PostController@create');
-//Route::resource('comment', 'CommentController');
+Route::resource('comment', 'CommentController');
 
 /* --------------------------------------------------------- *\
    Other specific routes
