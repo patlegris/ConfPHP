@@ -183,8 +183,8 @@
                             <br>
                             {!! Form::label('status', 'Status:',['class' => 'col-sm-2 col-md-2 col-lg-2
                             control-label', 'for'=>'status']) !!}
-                            Publish : {!! Form::radio('status', 'publish',['cols'=>100, 'rows'=>10, 'required']) !!}
-                            Un-publish : {!! Form::radio('status', 'un-publish',['cols'=>30, 'rows'=>10, 'required'])
+                            Publish : {!! Form::radio('status', 'publish',['required']) !!}
+                            Un-publish : {!! Form::radio('status', 'un-publish',['required'])
                              !!}
                             {!! $errors->first('status', '<span class="help-block">:message</span>') !!}
                         </div>
