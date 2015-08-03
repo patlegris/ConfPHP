@@ -52,8 +52,7 @@ class PostController extends Controller
             $post->save();
         }
         return redirect()->to('dashboard.dashboard')->with('message', Alert::message('La conférence "' . $post->title . '"
-         est
-        créée', 'success'));
+         est créée', 'success'));
     }
 
     /**

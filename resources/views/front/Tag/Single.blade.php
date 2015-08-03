@@ -1,11 +1,5 @@
 <!doctype html>
-@include('includes.head')
-<body>
-@include('includes.browser')
-@include('includes.header')
-@section('title')
-    Mots cl�s
-@endsection
+
 
 @section('content')
     <section class="tag">
@@ -23,5 +17,3 @@
 @include('includes.sidebar')
 
 @include('includes.footer')
-</body>
-</html>
